@@ -1,9 +1,10 @@
 #include "tinythreads.h"
+#include "lab1.h"
 #include <stdbool.h>
 
-void writeChar(char ch, int pos); // from lab 1
+//void writeChar(char ch, int pos); // from lab 1
 
-bool is_prime(long i); // from lab 1
+//bool is_prime(long i); // from lab 1
 
 void printAt(long num, int pos) {
     int pp = pos;
@@ -23,6 +24,9 @@ void computePrimes(int pos) {
 }
 
 int main() {
+	//init code
+	lcd_init();
+
     spawn(computePrimes, 0);
     computePrimes(3);
 }
