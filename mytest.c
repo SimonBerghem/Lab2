@@ -2,6 +2,7 @@
 #include "lab1.h"
 #include <stdbool.h>
 
+void inter_init(void);
 //void writeChar(char ch, int pos); // from lab 1
 
 //bool is_prime(long i); // from lab 1
@@ -19,15 +20,12 @@ void computePrimes(int pos) {
     for(n = 1; ; n++) {
         if (is_prime(n)) {
             printAt(n, pos);
-			yield();
+			//yield();
         }
     }
 }
 
 int main() {
-	//init code
-	lcd_init();
-
     spawn(computePrimes, 0);
     computePrimes(3);
 }

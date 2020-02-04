@@ -2,6 +2,8 @@
 #include <avr/io.h>
 #include <avr/interrupt.h>
 #include "tinythreads.h"
+#include "interupts.h"
+#include "lab1.h";
 
 #define NULL            0
 #define DISABLE()       cli()
@@ -35,6 +37,8 @@ static void initialize(void) {
         threads[i].next = &threads[i+1];
     threads[NTHREADS-1].next = NULL;
 
+	lcd_init();
+	inter_init();
 
     initialized = 1;
 }
